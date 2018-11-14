@@ -7,6 +7,9 @@
   "scripts": {
     "build": "babel lib -d dist"
   },
+  "peerDependencies": {
+    "jest": "^23.6.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
