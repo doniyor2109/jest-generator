@@ -1,0 +1,17 @@
+{
+  "name": "jest-generator",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:doniyor2109/jest-generator.git",
+  "scripts": {
+    "build": "babel lib -d dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/preset-env": "^7.1.6"
+  },
+  "keywords": ["jest", "jest-matchers", "generator", "testing generator", "test util"],
+  "license": "MIT"
+}
