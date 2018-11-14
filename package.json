@@ -2,6 +2,7 @@
   "name": "jest-generator",
   "version": "1.0.1",
   "main": "dist/index.js",
+  "typings": "typings.d.ts",
   "repository": "git@github.com:doniyor2109/jest-generator.git",
   "scripts": {
     "build": "babel lib -d dist"
