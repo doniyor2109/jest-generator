@@ -124,3 +124,56 @@ test('should handle error response', () => {
 });
 
 ```
+
+# API
+
+```js
+.toMatchYields(
+  yieldValues: [
+    [yieldValue: any, returnType: any | Error]
+  ]
+)
+```
+
+Matches iterator against given yield values
+
+```js
+expect(itetaor).toMatchYields([
+  [callAPI()]
+])
+```
+
+In order to return value from yield, simply pass your return value as second array value
+
+```js
+function* gen() {
+  const response = yield fetch()
+  yield update(response)
+}
+
+const mockResponse = {};
+const iterator = gen();
+
+expect(iterator).toMatchYields([
+  [fetch(), mockResponse],
+  [update(mockResponse)]
+])
+```
+
+In order to throw error from yield, you should simply pass `Error` instance to return type
+
+```js
+function* gen() {
+  const response = yield fetch()
+  yield update(response)
+}
+
+const mockErrorResponse = new Error('network error');
+const iterator = gen();
+
+expect(iterator).toMatchYields([
+  [fetch(), mockErrorResponse],
+  [handleError(mockErrorResponse)]
+])
+```
+ 
