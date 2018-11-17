@@ -38,7 +38,7 @@ Add `jest-generator` to your Jest `setupTestFrameworkScriptFile` configuration
 Require `jest-generator` from setupTest script
 
 ```js
-// ./setuptTest.js
+// ./setupTest.js
 
 require('jest-extended');
 ```
@@ -47,7 +47,7 @@ Then add this config
 
 ```json
 "jest": {
-  "setupTestFrameworkScriptFile": "./testSetup.js"
+  "setupTestFrameworkScriptFile": "./setupTest.js"
 }
 ```
 
