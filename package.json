@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "main": "dist/index.js",
   "typings": "typings.d.ts",
+  "description": "Testing generator function never been easy",
   "repository": "git@github.com:doniyor2109/jest-generator.git",
   "scripts": {
     "build": "babel lib -d dist"
