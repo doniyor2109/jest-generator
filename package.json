@@ -18,8 +18,13 @@
   },
   "keywords": [
     "jest",
+    "matchers",
+    "test",
+    "testing",
+    "assertions",
     "jest-matchers",
     "generator",
+    "generator function",
     "testing generator",
     "test util"
   ],
