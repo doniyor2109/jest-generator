@@ -99,7 +99,7 @@ export function* loadBooks(params) {
 ```js
 // ./books.test.js
 
-import { number } from './generator';
+import { loadBooks } from './books';
 
 test('should handle success response', () => {
   const params = { id: 201 };
