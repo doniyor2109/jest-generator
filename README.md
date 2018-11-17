@@ -134,7 +134,7 @@ test('should handle error response', () => {
 ```js
 .toMatchYields(
   yieldValues: [
-    [yieldValue: any, returnType: any | Error]
+    [yieldValue: any, returnType?: any | Error]
   ]
 )
 ```
