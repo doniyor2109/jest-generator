@@ -1,5 +1,8 @@
 # jest-generator
 
+Testing generators are verbose as they require calling `next` method of generator each time you want to iterate. `jest-generator` encapsulates all iteration and assertion logic itself. It provides easy and readable API for testing generator functions.
+
+
 # Installation
 
 ```bash
@@ -69,6 +72,54 @@ test('should work correctly', () => {
     [1],
     [2],
     [3]
+  ]);
+});
+
+```
+
+# Usage with thirdy party libraries
+
+## Usage with Saga
+
+ 
+```js
+// ./books.js
+
+export function* loadBooks(params) {
+  try {
+    const response = yield call(api.loadBooks, params)
+    
+    yield put(booksLoadedSuccess(response))
+  } catch (error) {
+    yield put(booksLoadFail(error.message))
+  }
+}
+```
+
+```js
+// ./books.test.js
+
+import { number } from './generator';
+
+test('should handle success response', () => {
+  cosnt params = { id: 201 };
+  const iterator = loadBooks(params);
+  const response = [];
+
+  expect(iterator).toMatchYields([
+    [call(api.loadBooks, params), response],
+    [booksLoadedSuccess(response)],
+  ]);
+});
+
+test('should handle error response', () => {
+  cosnt params = { id: 201 };
+  const iterator = loadBooks(params);
+  const response = new Error('failed to load books);
+
+  expect(iterator).toMatchYields([
+    [call(api.loadBooks, params), response],
+    [put(booksLoadFail(response.message))],
   ]);
 });
 
