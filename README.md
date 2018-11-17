@@ -21,7 +21,7 @@ npm install --save-dev jest-generator
 
 # Setup
 
-##### Via `setupTestFrameworkScriptFile` config
+#### Via `setupTestFrameworkScriptFile` config
 
 Add `jest-generator` to your Jest `setupTestFrameworkScriptFile` configuration
 
@@ -31,7 +31,7 @@ Add `jest-generator` to your Jest `setupTestFrameworkScriptFile` configuration
 }
 ```
 
-##### Via `setupTest` script
+#### Via `setupTest` script
 
 Require `jest-generator` from setupTest script
 
