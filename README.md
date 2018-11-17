@@ -77,7 +77,7 @@ test('should work correctly', () => {
 
 ```
 
-# Usage with thirdy party libraries
+# Usage with other libraries
 
 ## Usage with Saga
 
@@ -115,7 +115,7 @@ test('should handle success response', () => {
 test('should handle error response', () => {
   cosnt params = { id: 201 };
   const iterator = loadBooks(params);
-  const response = new Error('failed to load books);
+  const response = new Error('failed to load books');
 
   expect(iterator).toMatchYields([
     [call(api.loadBooks, params), response],
