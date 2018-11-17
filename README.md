@@ -40,7 +40,7 @@ Require `jest-generator` from setupTest script
 ```js
 // ./setupTest.js
 
-require('jest-extended');
+require('jest-generator');
 ```
 
 Then add this config
