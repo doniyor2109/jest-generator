@@ -102,7 +102,7 @@ export function* loadBooks(params) {
 import { number } from './generator';
 
 test('should handle success response', () => {
-  cosnt params = { id: 201 };
+  const params = { id: 201 };
   const iterator = loadBooks(params);
   const response = [];
 
@@ -113,7 +113,7 @@ test('should handle success response', () => {
 });
 
 test('should handle error response', () => {
-  cosnt params = { id: 201 };
+  const params = { id: 201 };
   const iterator = loadBooks(params);
   const response = new Error('failed to load books');
 
