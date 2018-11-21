@@ -24,29 +24,31 @@ npm install --save-dev jest-generator
 
 # Setup
 
+#### Via `setupTestFrameworkScriptFile` config
+
 Add `jest-generator` to your Jest `setupTestFrameworkScriptFile` configuration
 
 ```json
 "jest": {
-  "setupTestFrameworkScriptFile": "jest-extended"
+  "setupTestFrameworkScriptFile": "jest-generator"
 }
 ```
 
-or
+#### Via `setupTest` script
 
 Require `jest-generator` from setupTest script
 
 ```js
-// ./setuptTest.js
+// ./setupTest.js
 
-require('jest-extended');
+require('jest-generator');
 ```
 
 Then add this config
 
 ```json
 "jest": {
-  "setupTestFrameworkScriptFile": "./testSetup.js"
+  "setupTestFrameworkScriptFile": "./setupTest.js"
 }
 ```
 
@@ -127,3 +129,56 @@ test('should handle error response', () => {
 });
 
 ```
+
+# API
+
+```js
+.toMatchYields(
+  yieldValues: [
+    [yieldValue: any, returnType?: any | Error]
+  ]
+)
+```
+
+Matches iterator against given yield values
+
+```js
+expect(itetaor).toMatchYields([
+  [callAPI()]
+])
+```
+
+In order to return value from yield, simply pass your return value as second array value
+
+```js
+function* gen() {
+  const response = yield fetch()
+  yield update(response)
+}
+
+const mockResponse = {};
+const iterator = gen();
+
+expect(iterator).toMatchYields([
+  [fetch(), mockResponse],
+  [update(mockResponse)]
+])
+```
+
+In order to throw error from yield, you should simply pass `Error` instance to return type
+
+```js
+function* gen() {
+  const response = yield fetch()
+  yield update(response)
+}
+
+const mockErrorResponse = new Error('network error');
+const iterator = gen();
+
+expect(iterator).toMatchYields([
+  [fetch(), mockErrorResponse],
+  [handleError(mockErrorResponse)]
+])
+```
+ 
