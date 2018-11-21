@@ -29,7 +29,7 @@ Add `jest-generator` to your Jest `setupTestFrameworkScriptFile` configuration
 
 ```json
 "jest": {
-  "setupTestFrameworkScriptFile": "jest-extended"
+  "setupTestFrameworkScriptFile": "jest-generator"
 }
 ```
 
