@@ -5,6 +5,8 @@
 
 Testing generators are verbose as they require calling `next` method of generator each time you want to iterate. `jest-generator` encapsulates all iteration and assertion logic itself. It provides easy and readable API for testing generator functions.
 
+![Testing with jest-generator](https://raw.githubusercontent.com/doniyor2109/jest-generator/master/jest-generator-example.png)
+
 
 # Installation
 
