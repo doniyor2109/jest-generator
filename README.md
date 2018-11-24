@@ -1,5 +1,6 @@
 # jest-generator
 
+[![npm](https://img.shields.io/npm/v/jest-generator.svg)](https://www.npmjs.com/package/jest-generator)
 [![Build Status](https://travis-ci.com/doniyor2109/jest-generator.svg?branch=master)](https://travis-ci.com/doniyor2109/jest-generator)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/doniyor2109/jest-generator/blob/master/LICENSE)
 
@@ -184,3 +185,6 @@ expect(iterator).toMatchYields([
 ])
 ```
  
+# Licence
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
