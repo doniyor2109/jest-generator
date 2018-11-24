@@ -55,9 +55,9 @@ Then add this config
 # Usage
 
 ```js
-// ./generator.js
+// ./pay.js
 
-export function* pay() {
+export default function* pay() {
   yield validatePayment();
   yield makePayment();
 
@@ -66,12 +66,12 @@ export function* pay() {
 ```
 
 ```js
-// ./generator.test.js
+// ./pay.test.js
 
-import { number } from './generator';
+import pay from './pay';
 
 test('should work correctly', () => {
-  const iterator = numbers();
+  const iterator = pay();
 
   expect(iterator).toMatchYields([
     [validatePayment()],
