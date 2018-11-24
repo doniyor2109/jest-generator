@@ -57,11 +57,11 @@ Then add this config
 ```js
 // ./generator.js
 
-export function* numbers() {
-  yield 1;
-  yield 2;
+export function* pay() {
+  yield validatePayment();
+  yield makePayment();
 
-  return 3;
+  return finishPayment();
 }
 ```
 
@@ -74,9 +74,9 @@ test('should work correctly', () => {
   const iterator = numbers();
 
   expect(iterator).toMatchYields([
-    [1],
-    [2],
-    [3]
+    [validatePayment()],
+    [makePayment()],
+    [finishPayment()]
   ]);
 });
 
