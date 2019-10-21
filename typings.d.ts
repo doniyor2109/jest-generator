@@ -1,10 +1,10 @@
-export declare namespace jest {
+declare namespace jest {
     type expectType = any;
     type returnType = Error | any;
     type yieldValue = [expectType, returnType?];
     type yieldValues = yieldValue[];
 
-	interface Matchers {
+	export interface Matchers<R> {
 		toMatchYields: (yieldValues: yieldValues) => void
 	}
 }
