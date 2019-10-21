@@ -91,14 +91,14 @@ test('should work correctly', () => {
 
 ## Usage with Saga
 
- 
+
 ```js
 // ./books.js
 
 export function* loadBooks(params) {
   try {
     const response = yield call(api.loadBooks, params)
-    
+
     yield put(booksLoadedSuccess(response))
   } catch (error) {
     yield put(booksLoadFail(error.message))
@@ -148,7 +148,7 @@ test('should handle error response', () => {
 Matches iterator against given yield values
 
 ```js
-expect(itetaor).toMatchYields([
+expect(iterator).toMatchYields([
   [callAPI()]
 ])
 ```
@@ -186,7 +186,7 @@ expect(iterator).toMatchYields([
   [handleError(mockErrorResponse)]
 ])
 ```
- 
+
 # Licence
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
