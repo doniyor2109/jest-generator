@@ -148,7 +148,7 @@ test('should handle error response', () => {
 Matches iterator against given yield values
 
 ```js
-expect(itetaor).toMatchYields([
+expect(iterator).toMatchYields([
   [callAPI()]
 ])
 ```
