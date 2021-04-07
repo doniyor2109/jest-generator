@@ -9,7 +9,7 @@
     "build": "babel lib -d dist"
   },
   "peerDependencies": {
-    "jest": "^23.6.0"
+    "jest": "*"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
